@@ -5,6 +5,8 @@ LANGUAGE: C
 ENVIRONMENT: Any
 :: angle convert string arc-meas format
 */
+#include <string.h>
+
 #include "ctype.h"
 #include "STDDEFS.H"
 #include "MATHCNST.H"

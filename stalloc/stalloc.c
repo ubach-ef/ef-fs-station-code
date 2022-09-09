@@ -3,6 +3,7 @@
 #include <signal.h>
 #include <sys/types.h>
 #include <sys/ipc.h>
+#include <stdlib.h>
 
 #include "/usr2/fs/include/params.h"
 #include "/usr2/fs/include/fs_types.h"

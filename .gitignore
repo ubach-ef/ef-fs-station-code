@@ -1,3 +1,11 @@
+bin/antcn
+bin/antrcv_multi
+bin/autoftp
+bin/cheks
+bin/inject_snap
+bin/stalloc
+bin/sterp
+bin/stqkr
 Makefile.orig
 antcn/-l
 antcn/-l100
@@ -31,8 +39,6 @@ antrcv/offsource.txt
 antrcv/offsource2.txt
 antrcv/onsource.txt
 antrcv/pid
-autoftp/autoftp
-bin/
 cheks/cheks.o
 eremotectrl/
 extra/tcpserver

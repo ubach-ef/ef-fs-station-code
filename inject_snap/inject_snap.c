@@ -17,6 +17,7 @@
 
 #include <stdio.h>
 #include <sys/types.h>
+#include <string.h>
 
 /* For tolower. */
 #include <ctype.h>
