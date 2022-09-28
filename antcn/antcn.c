@@ -95,7 +95,7 @@ main()
   int dum = 0;
   int r1, r2;
   int imode,i,nchar,n1,n2,nepoch;
-  long ip[5], class, clasr;
+  int ip[5], class, clasr;
   char buf[300], buf2[300];
 /*  Eff stuff */
 struct servent *sp;
@@ -117,9 +117,9 @@ struct hostent *hp;       /* host address */
    static char effband[9];            /* WHICH RF BAND IN USE */
    static int effpcal,efftcal;   /* pcal 0 off 1 on swcal 0 off 1 on */
    static float fflo;             /* gets lo frequenz*/
-   static long ifflo,iffcent; /*same , and rf_centre for comparison with what is read back from system*/
-   long isitgeo;
-   static long ifantenna; /*local copy of whats read back from antenna*/
+   static int ifflo,iffcent; /*same , and rf_centre for comparison with what is read back from system*/
+   int isitgeo;
+   static int ifantenna; /*local copy of whats read back from antenna*/
    char off1[30],off2[30];      /*for case 2 offsets: in arcsec*/
    
 /* end of eff stuff */

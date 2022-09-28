@@ -43,14 +43,14 @@ extern struct fscom *shm_addr;
 /* External FS functions, perhaps these should eventually go into a '.h'? */
 extern void setup_ids(void);
 extern void sig_ignore(void);
-extern void cls_snd(long *class,
+extern void cls_snd(int *class,
 		    char *buffer,
 		    int length,
 		    int parm3,
 		    int parm4);
-extern void skd_run(char name[5], char w, long ip[5]);
+extern void skd_run(char name[5], char w, int ip[5]);
 
-static long ipr[5] = { 0, 0, 0, 0, 0};
+static int ipr[5] = { 0, 0, 0, 0, 0};
 
 /* The dynamically allocated SNAP command table. */
 

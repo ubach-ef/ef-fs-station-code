@@ -79,7 +79,7 @@ BOOL round;        /* TRUE- output string is rouned, FALSE-truncated */
     BOOL lzero_flag = FALSE;    /* TRUE => use leading zeros fill */
     int sign_flag = 1;          /* 1=positive, -1=negative angle */
     register int i;
-    register long long_tmp;
+    register int long_tmp;
 
     /* decode measure type from format string */
     if (*pformat == 'h')
@@ -173,7 +173,7 @@ BOOL round;        /* TRUE- output string is rouned, FALSE-truncated */
 	angle -= long_tmp;     /* angle = fractional part of secs  */
         for (i = 0; i < n; i++)
             angle *= 10.0;
-        pstring += ltostr ((long)angle, pstring, -n, 0);
+        pstring += ltostr ((int)angle, pstring, -n, 0);
 	}
 //    *pstring++ = units_char[2];
     *pstring++ = '\0';
@@ -184,7 +184,7 @@ BOOL round;        /* TRUE- output string is rouned, FALSE-truncated */
 /*******************************************************************************
 */
 static int ltostr (number, pstring, width, sign)    /* convert long to string */
-long number;    /* number to be converted */
+int number;    /* number to be converted */
 char *pstring;  /* receiving string */
 int width;      /* minimum width of numeric field, positive width => use 
 		   leading blank fill, negative => leading zero fill */

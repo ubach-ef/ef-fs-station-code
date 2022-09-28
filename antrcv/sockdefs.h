@@ -26,10 +26,10 @@
 #define FOREVER   for(;;) {
 #define ENDFOREVER   }
 
-#define FATAL					(long)-1
-#define NORMAL				(long)1
-#define INFORM				(long)0
-#define ADDSYSERR		(long)-999    
+#define FATAL					(int)-1
+#define NORMAL				(int)1
+#define INFORM				(int)0
+#define ADDSYSERR		(int)-999    
 
 #define SOCK_ADDR_SIZE		(sizeof (struct sockaddr_in))
 #define MAX_QUEUED_CONNECTIONS	(4)

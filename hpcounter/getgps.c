@@ -16,7 +16,7 @@ extern struct fscom *fs;
 /*get gps value from truetime and log it when asked for*/
 void getgps(command,ip,isub,iresult)
 struct cmd_ds *command;
-long ip[5];
+int ip[5];
 int isub,iresult;
 {
    int i,ierr;

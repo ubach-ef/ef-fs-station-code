@@ -17,7 +17,7 @@ extern struct fscom *fs;
 /*get gps value from hp counter and log it when asked for*/
 void getgps(command,ip,isub,iresult)
 struct cmd_ds *command;
-long ip[5];
+int ip[5];
 int isub,iresult;
 {
    FILE *fp;

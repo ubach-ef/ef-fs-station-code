@@ -62,7 +62,7 @@ void logit();
 /*++******************************************************************/
 main ()    
 {
- long servport,cliport,mode,servsock,clisock,clilen;
+ int servport,cliport,mode,servsock,clisock,clilen;
  char clienttxt[BUFDIM],answertxt[BUFDIM];
  char buf2[300];
 
@@ -108,10 +108,10 @@ resock:                /*hhh restart here if system lost */
       char buf[ARGBUF];
       char ctemp[20],ctemp1[10];
       char bf1[30],bf6[30];
-      long scanmsec;
+      int scanmsec;
       float vv,vv1,vvtol;
       double vd;
-      long vl;
+      int vl;
       char *pp,*tmpch;
       int td1,td2,td3;
       float tf1;

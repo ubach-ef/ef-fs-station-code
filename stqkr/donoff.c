@@ -27,7 +27,7 @@ float flux_val();
 void donoff(command,itask,ip)
 struct cmd_ds *command;                /* parsed command structure */
 int itask;
-long ip[5];                           /* ipc parameters */
+int ip[5];                           /* ipc parameters */
 {
       int ilast, ierr, ichold, i, count, j;
       int verr;
@@ -168,7 +168,7 @@ long ip[5];                           /* ipc parameters */
 	      if(lcl.devices[i].ifchain<1||lcl.devices[i].ifchain>4)
 		lcl.devices[i].ifchain=0;
 	      if(lcl.devices[i].ifchain!=0) {
-		long bbc2freq();
+		int bbc2freq();
 		float freq, bbcbw;
 		
 		freq=bbc2freq(shm_addr->bbc[i%MAX_BBC].freq)/100.0;

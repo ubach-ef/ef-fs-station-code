@@ -16,7 +16,7 @@ extern struct fscom *fs;
 
 void effcal(command,ip,isub,iresult)
 struct cmd_ds *command;
-long ip[5];
+int ip[5];
 int isub,iresult;
 {
    static int ieffcal;

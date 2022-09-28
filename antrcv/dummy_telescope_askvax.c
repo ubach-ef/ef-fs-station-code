@@ -92,11 +92,11 @@ main ()
       char buf[ARGBUF];
       char ctemp[20],ctemp1[10];
       char bf1[30],bf6[30];
-      long scanmsec;
+      int scanmsec;
       float vv,vv1,vvtol;
       float aoff,eoff,toff,tof1,tof2;
       double vd;
-      long vl;
+      int vl;
       char *pp,*tmpch;
       int td1,td2,td3;
       float tf1;

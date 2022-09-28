@@ -18,7 +18,7 @@ extern struct stcom *st;
 /* replacement patch command, mk4 only, includes call to Eff patch device*/
 void effpatch(command,ip,isub,iresult)
 struct cmd_ds *command;
-long ip[5];
+int ip[5];
 int isub,iresult;
 {
 //   static int last_patch_set[16];

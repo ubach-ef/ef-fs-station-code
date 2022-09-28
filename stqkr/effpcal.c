@@ -22,7 +22,7 @@ extern struct fscom *fs;
     to synchronize reported state with hardware */
 void effpcal(command,ip,isub,iresult)
 struct cmd_ds *command;
-long ip[5];
+int ip[5];
 int isub,iresult;
 {
    static int ieffpcal;

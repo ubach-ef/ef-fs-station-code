@@ -35,7 +35,7 @@ main(int argc, char *argv[])
   int i,iii;
   int read_errors=0;
   int write_errors=0;
-  long idiff;
+  int idiff;
   double tdiff,tdiffout;
   
   setup_st();
