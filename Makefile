@@ -42,10 +42,13 @@ libs:
 		make -C $$dir ;\
 	done
 #
-execs:
+execs: bin
 	for dir in $(EXEC_DIR); do \
 		make -C $$dir; \
 	done
+#
+bin:
+	mkdir bin
 #
 install:
 	sh misc/stinstall
