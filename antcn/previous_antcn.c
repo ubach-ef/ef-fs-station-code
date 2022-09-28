@@ -70,14 +70,14 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "/usr2/fs/include/params.h" /* FS parameters            */
-#include "/usr2/fs/include/fs_types.h" /* FS header files        */
-#include "/usr2/fs/include/fscom.h"  /* FS shared mem. structure */
-#include "/usr2/fs/include/shm_addr.h" /* FS shared mem. pointer */
+#include "../../fs/include/params.h" /* FS parameters            */
+#include "../../fs/include/fs_types.h" /* FS header files        */
+#include "../../fs/include/fscom.h"  /* FS shared mem. structure */
+#include "../../fs/include/shm_addr.h" /* FS shared mem. pointer */
 
-#include "/usr2/st/include/stparams.h"
-#include "/usr2/st/include/stcom.h"
-#include "/usr2/st/include/stm_addr.h"   /* Station shared mem. pointer*/
+#include "../include/stparams.h"
+#include "../include/stcom.h"
+#include "../include/stm_addr.h"   /* Station shared mem. pointer*/
 
 struct fscom *fs;
 //struct stcom *st;

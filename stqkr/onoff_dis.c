@@ -4,10 +4,10 @@
 #include <string.h>
 #include <sys/types.h>
 
-#include "/usr2/fs/include/params.h"
-#include "/usr2/fs/include/fs_types.h"
-#include "/usr2/fs/include/fscom.h"
-#include "/usr2/fs/include/shm_addr.h"
+#include "../../fs/include/params.h"
+#include "../../fs/include/fs_types.h"
+#include "../../fs/include/fscom.h"
+#include "../../fs/include/shm_addr.h"
 
 #define MAX_OUT 256
 

@@ -5,11 +5,11 @@
 #include <string.h> 
 #include <sys/types.h>
 
-#include "/usr2/fs/include/dpi.h"
-#include "/usr2/fs/include/params.h"
-#include "/usr2/fs/include/fs_types.h"
-#include "/usr2/fs/include/fscom.h"         /* shared memory definition */
-#include "/usr2/fs/include/shm_addr.h"      /* shared memory pointer */
+#include "../../fs/include/dpi.h"
+#include "../../fs/include/params.h"
+#include "../../fs/include/fs_types.h"
+#include "../../fs/include/fscom.h"         /* shared memory definition */
+#include "../../fs/include/shm_addr.h"      /* shared memory pointer */
 
 static char hex[]= "0123456789abcdef";
 static char det[] = "dlu34567";
