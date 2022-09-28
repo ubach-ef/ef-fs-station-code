@@ -1,5 +1,5 @@
 CFLAGS=-g
-LIBS = /usr2/fs/port/port.a /usr2/st/stlib/stlib.a  -lfl
+LIBS = ../../fs/port/port.a ../stlib/stlib.a  -lfl
 OBJECTS = hpcounter.o
 #
 ../bin/hpcounter: hpcounter.o $(OBJECTS)

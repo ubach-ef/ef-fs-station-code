@@ -20,7 +20,7 @@ extern struct fscom *fs;
  where parameters from rcp on only for VeEX */
 void efflo(command,ip,isub,iresult)
 struct cmd_ds *command;
-long ip[5];
+int ip[5];
 int isub,iresult;
 {
    static float floa,flob;

@@ -35,14 +35,14 @@ struct fscom *fs;
 /* Subroutines called */
 void setup_ids();
 void logit();
-long server_bind(long *mode,long *portnum,long *fsock,char *errortxt);
-long socket_sendto(long *portnum,long *sock,char *buf,long *fbuflen
+int server_bind(int *mode,int *portnum,int *fsock,char *errortxt);
+int socket_sendto(int *portnum,int *sock,char *buf,int *fbuflen
                   ,char *hostaddr);
-long socket_rcvfrom(long *fsock,char *buf,long *fbuflen,char *clientaddr);
+int socket_rcvfrom(int *fsock,char *buf,int *fbuflen,char *clientaddr);
 void bytezero(char *dest,int bytes);
-void callerror(char *errortext,long severity);
-long addr_file(char *filename,long *maxnr,long portcli[],char *hostaddr[]);
-long check_address(long *maxnr,char *addrfeld[],char *iaddr);
+void callerror(char *errortext,int severity);
+int addr_file(char *filename,int *maxnr,int portcli[],char *hostaddr[]);
+int check_address(int *maxnr,char *addrfeld[],char *iaddr);
 /* antrcv main program starts here */
 /* eff setup socket stuff */
 /*---------------------------------------------------------------------*/
@@ -50,11 +50,11 @@ long check_address(long *maxnr,char *addrfeld[],char *iaddr);
 /*++******************************************************************/
 main ()    
 {
- long servport,cliport,mode,servsock,clisock,clilen;
+ int servport,cliport,mode,servsock,clisock,clilen;
  char clienttxt[BUFDIM],answertxt[BUFDIM];
  char *serverfile=ADRESSENFILE;
  BOOL senden=FALSE;  
- long icond,max=MAXX,cliports[MAXX],i,ianz;
+ int icond,max=MAXX,cliports[MAXX],i,ianz;
  char *hosts[MAXX];
  char hostaddr[MAXX][80];
 
@@ -214,16 +214,16 @@ char s[],t; int n;
 }
 /* - - - - - - - - - - - - - - - - - - - -*/
 
-long server_bind(long *fmode,long *portnum,long *fsock,char *errortxt)
+int server_bind(int *fmode,int *portnum,int *fsock,char *errortxt)
 /*                               Version 05.02.96 / jn */
 {
  static struct sockaddr_in  server;
 
  int addrlen,sock,type,protocol,mode;
- long portnumber,iret;
+ int portnumber,iret;
  int x=1; /*hhhh*/
 
-  portnumber=(long)*portnum;
+  portnumber=(int)*portnum;
   mode=(int)*fmode;
 
 /*  Verbindungsmode festlegen   */
@@ -236,7 +236,7 @@ long server_bind(long *fmode,long *portnum,long *fsock,char *errortxt)
     
    setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (char *)&x, sizeof(x));
 
-  *fsock=(long)sock;
+  *fsock=(int)sock;
   addrlen=sizeof(server);
   bytezero((char *)&server,addrlen);
   server.sin_family = AF_INET;
@@ -256,17 +256,17 @@ ende:
   return(iret);
 }
 
-long socket_sendto(long *portnum,long *fsock,char *buf,long *fbuflen
+int socket_sendto(int *portnum,int *fsock,char *buf,int *fbuflen
                   ,char *hostaddr)
 /*                               Version 05.02.96 / jn */
 {
  struct sockaddr_in host; 
 
  int rval,flags,addrlen,buflen,sock;
- long portnumber,iret;
+ int portnumber,iret;
 
   sock=(int)*fsock;
-  portnumber=(long)*portnum;
+  portnumber=(int)*portnum;
   buflen=(int)*fbuflen;
   flags=0;
 
@@ -291,13 +291,13 @@ long socket_sendto(long *portnum,long *fsock,char *buf,long *fbuflen
 
 }
 
-long socket_rcvfrom(long *fsock,char *buf,long *fbuflen
+int socket_rcvfrom(int *fsock,char *buf,int *fbuflen
                    ,char *clientaddr)
 /*                               Version 05.02.96 / jn */
 {
  static struct sockaddr_in  client;
  int rval,flags,addrlen,buflen,sock;
- long iret;
+ int iret;
   buflen=(int)*fbuflen;
   sock=(int)*fsock;
   flags=0;
@@ -319,23 +319,23 @@ long socket_rcvfrom(long *fsock,char *buf,long *fbuflen
         iret=0; return(iret);   /* rval -1 just means no reply    */
 }
 
-long check_address(long *maxnr,char *addrfeld[],char *iaddr)
+int check_address(int *maxnr,char *addrfeld[],char *iaddr)
 /*                               Version 05.02.96 / jn */
 {
   int i,max,icond;
-  long iret;
+  int iret;
   max=(int)*maxnr;
   for (i=0;i<max;i++)
       { 
        if ( (icond=(int)strstr(addrfeld[i],iaddr)) != 0 ) 
-          { iret=(long)i; return(iret); }                   /* gefunden */    
+          { iret=(int)i; return(iret); }                   /* gefunden */    
       }
 
   iret= -1;
   return(iret);
 }
 
-void callerror(char *errortext,long severity)
+void callerror(char *errortext,int severity)
 /*                               Version 23.01.96 / jn */
 {
    switch (severity) 

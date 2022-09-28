@@ -19,9 +19,9 @@ struct fscom *fs;
 
 main()
 {
-    long ip[5];
-    long ipsave[5];
-    long outclass;
+    int ip[5];
+    int ipsave[5];
+    int outclass;
     int isub,itask,idum,ierr,nchars,i;
     char buf[MAX_BUF];
     char copy_buf[MAX_BUF];

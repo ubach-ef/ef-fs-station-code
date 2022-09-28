@@ -5,11 +5,11 @@
 #include <sys/ipc.h>
 #include <stdlib.h>
 
-#include "/usr2/fs/include/params.h"
-#include "/usr2/fs/include/fs_types.h"
-#include "/usr2/st/include/stparams.h"
-#include "/usr2/st/include/stcom.h"
-#include "/usr2/st/include/stm_addr.h"
+#include "../../fs/include/params.h"
+#include "../../fs/include/fs_types.h"
+#include "../include/stparams.h"
+#include "../include/stcom.h"
+#include "../include/stm_addr.h"
 
 main()
 {
