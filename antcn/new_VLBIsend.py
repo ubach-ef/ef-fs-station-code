@@ -96,7 +96,7 @@ def pcalon(sumlo):
           pcalcode="m"
           rx="S36mm"
     # 2cm bis 7mm SFK
-        elif sumlo > 12000 and sumlo < 15500:
+        elif sumlo > 12000 and sumlo < 16900:
           pcalcode="k"
           rx="S20mm"
     # 1.3cm SFK
@@ -162,19 +162,27 @@ def matchlo(sumlo):
           rxsetup="S45mm_vlbi6750"
           IFfreq=-1250
     # 2cm SFK
-        elif sumlo >= 12000 and sumlo <= 17900:
-          rxsetup="S20mm_vlbi"
+        elif sumlo >= 11300 and sumlo <= 14900:
+          rxsetup="S20mm_vlbi-low"
+          IFfreq=750
+    # 2cm SFK
+        elif sumlo >= 15000 and sumlo <= 17900:
+          rxsetup="S20mm_vlbi-high"
           IFfreq=-750
     # 1.3cm SFK
         elif sumlo >= 18000 and sumlo <= 21600:
           rxsetup="S14mm_vlbi"
           IFfreq=750
+    # 1.3cm SFK
+        elif sumlo >= 21650 and sumlo <= 26000:
+          rxsetup="S14mm_vlbi-high"
+          IFfreq=-750
     # 7mm SFK
         elif sumlo >= 40000 and sumlo <= 44000:
           rxsetup="S7mm_vlbi"
           IFfreq=750
     # 3mm PFK
-        elif sumlo==85500:
+        elif sumlo >= 80000 and sumlo <= 95000:
           rxsetup="P3mm_vlbi"
           IFfreq=750
         else:
@@ -229,10 +237,14 @@ def set_fiba(sumlo):
     filter08="S08161Z"
     filter16="S16161Z"
   elif sumlo == 8000.0:
+    filter_req="185"
+    filter08="S08185Z"
+    filter16="S16185Z"
+  elif sumlo == 7950.0:
     filter_req="161"
     filter08="S08161Z"
     filter16="S16161Z"
-  elif sumlo == 7950.0:
+  elif sumlo == 4088.0:
     filter_req="161"
     filter08="S08161Z"
     filter16="S16161Z"
@@ -500,7 +512,7 @@ while 1:
           if tcal=="0":
             tcal="10"
             #data="%s %s %s %s %s %s@%s %s %s %s" % (newline[0],newline[1],source,RA,DEC,sumlo+IFfreq,sumlostr,tcal,phascal,newline[8])
-	    data="%s %s %s %s %s %s@%s %s %s %s %s" % (newline[0],newline[1],source,RA,DEC,sumlo+IFfreq,sumlostr,tcal,phascal,newline[8],pulsarmode)
+            data="%s %s %s %s %s %s@%s %s %s %s %s" % (newline[0],newline[1],source,RA,DEC,sumlo+IFfreq,sumlostr,tcal,phascal,newline[8],pulsarmode)
             print "switch off"
             be4Sock.sendto(data,saddr)
             tcal="0"
